@@ -1,0 +1,60 @@
+{
+  "Metadata": {
+    "title": "Next.js リッチテンプレート",
+    "description": "Next.js テンプレート"
+  },
+  "PageError": {
+    "title": "不明なエラーが発生",
+    "retry": "リトライ"
+  },
+  "PageNotFound": {
+    "title": "ページが見つかりません"
+  },
+  "Theme": {
+    "Toggle theme": "テーマを切り替える",
+    "Mode": "モード",
+    "Light": "ライト",
+    "Dark": "ダーク",
+    "System": "システム"
+  },
+  "Languages": {
+    "Language": "言語",
+    "Select a language": "言語を選択"
+  },
+  "Home": "ホーム",
+  "About": "概要",
+  "PageHome": {
+    "Get started by editing": "編集を始める",
+    "By": "提供",
+    "Docs": "ドキュメント",
+    "Find in-depth information about Next&#46;js features and API&#46;": "Next.jsの機能やAPIに関する詳細情報をご覧いただけます。",
+    "Learn": "学ぶ",
+    "Learn about Next&#46;js in an interactive course with quizzes!": "Next.jsについて、クイズを交えたインタラクティブなコースで学べます！",
+    "Templates": "テンプレート",
+    "Explore starter templates for Next&#46;js&#46;": "Next.jsのスターターテンプレートをご覧ください。",
+    "Deploy": "デプロイ",
+    "Instantly deploy your Next&#46;js site to a shareable URL with Vercel&#46;": "Vercelを使って、Next.jsサイトを共有可能なURLに即座にデプロイできます。"
+  },
+  "PageAbout": {
+    "About This Project": "このプロジェクトについて",
+    "This project is a Next&#46;js template aimed at providing a robust starting point for building modern web applications&#46; It comes with pre-configured localization support, theme toggling, and various other features to streamline development&#46;": "このプロジェクトは、最新のWebアプリケーションを構築するための堅牢なスタートポイントを提供することを目的としたNext.jsテンプレートです。事前に構成されたローカリゼーションサポート、テーマ切り替え、その他のさまざまな機能が含まれており、開発を効率化します。",
+    "Project Details": "プロジェクトの詳細",
+    "This template is designed to help developers quickly set up a new Next&#46;js project with best practices and commonly needed features&#46; It includes:": "このテンプレートは、ベストプラクティスと一般的に必要とされる機能を備えた新しいNext.jsプロジェクトを迅速にセットアップできるよう設計されています。含まれている機能は以下の通りです：",
+    "Localization with next-intl": "next-intlによるローカリゼーション",
+    "Dark mode support with next-themes": "next-themesによるダークモードサポート",
+    "Responsive design with Tailwind CSS": "Tailwind CSSによるレスポンシブデザイン",
+    "Optimized performance with modern web standards": "最新のWeb標準による最適化されたパフォーマンス",
+    "Contributors": "貢献者",
+    "This project wouldn't be possible without the contributions of the following individuals:": "このプロジェクトは以下の個人の貢献なしには実現しませんでした：",
+    "Project Lead": "プロジェクトリード",
+    "Modules & Packages Used": "使用しているモジュールとパッケージ",
+    "Acknowledgments": "謝辞",
+    "We would like to thank the Next&#46;js community and the various open-source projects that have inspired and supported this template&#46;": "Next.jsコミュニティおよびこのテンプレートにインスピレーションを与え、サポートしてくれたさまざまなオープンソースプロジェクトに感謝します。",
+    "Contact": "お問い合わせ",
+    "For any inquiries or contributions, please reach out to us via our": {
+      "text_1": "ご質問や貢献については、以下の",
+      "text_2": "GitHubリポジトリ",
+      "text_3": "を通じてお問い合わせください。"
+    }
+  }
+}
