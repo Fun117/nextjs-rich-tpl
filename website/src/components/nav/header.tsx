@@ -63,7 +63,9 @@ function Header() {
               target={link.target}
               href={link.href}
               to={link.to}
-              i18n={link.i18n || false}
+              i18n_link={link.i18n_link || false}
+              i18n_text={link.i18n_text || false}
+              onClick={() => toggleOpen()}
             >
               {link.label}
             </TLink>
@@ -79,7 +81,9 @@ function Header() {
             target={link.target}
             href={link.href}
             to={link.to}
-            i18n={link.i18n || false}
+            i18n_link={link.i18n_link || false}
+            i18n_text={link.i18n_text || false}
+            onClick={() => toggleOpen()}
           >
             {link.label}
           </TLink>
@@ -99,8 +103,11 @@ function Header() {
             <div className="flex items-center gap-1">
               {config.themeConfig.header?.items?.project?.repository ===
                 "block" && (
-                <Link href={`https://github.com/${config.organizationName}/${config.projectName}`} target="block">
-                  <Button variant="ghost" className="w-10 h-10 p-0">
+                <Link
+                  href={`https://github.com/${config.organizationName}/${config.projectName}`}
+                  target="block"
+                >
+                  <Button variant="ghost" className="w-10 h-10 p-0" aria-label="GitHub project repository">
                     <FaGithub className="text-xl" />
                   </Button>
                 </Link>
@@ -124,14 +131,16 @@ function Header() {
             <NavItems type="right" />
             {config.themeConfig.header?.items?.project?.repository ===
               "block" && (
-              <Link href={`https://github.com/${config.organizationName}/${config.projectName}`} target="block">
-                <Button variant="ghost" className="w-10 h-10 p-0">
+              <Link
+                href={`https://github.com/${config.organizationName}/${config.projectName}`}
+                target="block"
+              >
+                <Button variant="ghost" className="w-10 h-10 p-0" aria-label="GitHub project repository">
                   <FaGithub className="text-xl" />
                 </Button>
               </Link>
             )}
             <ModeToggle />
-            <LanguageSelest />
           </div>
         </nav>
       </header>
@@ -148,7 +157,7 @@ function Header() {
             <div className="flex flex-col justify-start items-start gap-3">
               <NavItems type="right" />
               <div className="flex justify-start items-center gap-3 mt-2">
-                {config.themeConfig.colorMode.disableSwitch && (
+                {config.themeConfig.colorMode.selectSwitch && (
                   <ModeToggle onClick={() => toggleOpen()} />
                 )}
                 <LanguageSelest />

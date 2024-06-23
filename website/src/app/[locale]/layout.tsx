@@ -19,6 +19,7 @@ import { ThemeProvider } from "@/components/provider/theme";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/nav/header";
 import LoaderRo13 from "@/components/animation/loaderro13";
+import Footer from "@/components/nav/footer";
 
 export type LayoutProps = {
   params: { locale: string };
@@ -74,9 +75,7 @@ export async function generateMetadata(
     generator: config.themeConfig?.metadata?.generator || "Next.js",
     publisher: config.themeConfig?.metadata?.publisher || "Vercel",
     robots: config.themeConfig?.metadata?.robots || "follow, index",
-    metadataBase: config.themeConfig?.metadata?.metadataBase
-      ? new URL(config.themeConfig?.metadata?.metadataBase)
-      : new URL(config.url),
+    metadataBase: config.themeConfig?.metadata?.metadataBase || new URL(config.url),
     alternates: generateAlternates(),
     openGraph: {
       type: "website",
@@ -93,7 +92,7 @@ export async function generateMetadata(
         config.themeConfig?.metadata?.openGraph?.description ||
         config.description ||
         t(`description`),
-      images: config.themeConfig.metadata?.openGraph?.images,
+      images: config.themeConfig.metadata?.openGraph?.images || config.themeConfig.image,
       locale:
         config.themeConfig?.metadata?.openGraph?.locale ||
         config.i18n.localeConfigs[lang].htmlLang ||
@@ -119,7 +118,7 @@ export async function generateMetadata(
         config.themeConfig?.metadata?.creator ||
         "Fun_117"
       }`,
-      images: config.themeConfig.metadata?.twitter?.images,
+      images: config.themeConfig.metadata?.twitter?.images || config.themeConfig.image,
     },
     ...config.themeConfig?.metadata,
   };
@@ -154,6 +153,7 @@ export default async function LocaleLayout({
               <main className="w-full h-full min-h-[calc(100dvh-64px)]">
                 <Suspense fallback={<LoaderRo13 time={-1}/>}>{children}</Suspense>
               </main>
+              <Footer/>
             </TooltipProvider>
           </NextIntlClientProvider>
         </ThemeProvider>

@@ -1,48 +1,56 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import Link, { LinkProps } from "next/link";
-import React, { Suspense } from "react";
+import Link from "next/link";
+import React from "react";
 
+// Turl関数はロケールを含むURLを生成します
 export function Turl(url: string) {
   const lang = useLocale();
   return `${lang}/${url}`;
 }
 
+// TLinkPropsインターフェースはTLinkコンポーネントのプロパティを定義します
 interface TLinkProps {
   children: React.ReactNode;
+  className?: string;
   to?: string;
   href?: string;
   target?: string;
-  i18n?: boolean;
+  i18n_link?: boolean;
+  i18n_text?: boolean;
+  i18n_path?: string;
   onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }
+
+// TLinkコンポーネントは国際化対応のリンクを生成します
 export function TLink({
   children,
+  className,
   to,
   href,
   target,
-  i18n,
+  i18n_link = false,
+  i18n_text = false,
+  i18n_path = "",
   onClick,
 }: TLinkProps) {
   const t = useTranslations();
   const lang = useLocale();
 
-  let hrefUrl = "";
-
-  if (to) {
-    hrefUrl = i18n ? `/${lang}/${to}` : `/${to}`;
-  } else if (href) {
-    hrefUrl = href;
-  }
+  const hrefUrl = to ? (i18n_link ? `/${lang}/${to}` : `/${to}`) : href || "";
+  const setTarget = target || (to ? "_self" : "_blank");
 
   return (
     <Link
       href={hrefUrl}
-      target={target || to ? "_self" : "_blank"}
+      target={setTarget}
       onClick={onClick}
+      className={className}
     >
-      {i18n ? t(children) : children}
+      {i18n_text
+        ? t(`${i18n_path}${i18n_path ? "." : ""}${children}`)
+        : children}
     </Link>
   );
 }

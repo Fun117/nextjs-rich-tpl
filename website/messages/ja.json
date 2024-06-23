@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Next.js リッチテンプレート",
-    "description": "Next.js テンプレート"
+    "description": "このプロジェクトは、最新のWebアプリケーションを構築するための堅牢なスタートポイントを提供することを目的としたNext.jsテンプレートです。事前に構成されたローカリゼーションサポート、テーマ切り替え、その他のさまざまな機能が含まれており、開発を効率化します。"
   },
   "PageError": {
     "title": "不明なエラーが発生",
@@ -21,8 +21,6 @@
     "Language": "言語",
     "Select a language": "言語を選択"
   },
-  "Home": "ホーム",
-  "About": "概要",
   "PageHome": {
     "Get started by editing": "編集を始める",
     "By": "提供",
@@ -36,25 +34,63 @@
     "Instantly deploy your Next&#46;js site to a shareable URL with Vercel&#46;": "Vercelを使って、Next.jsサイトを共有可能なURLに即座にデプロイできます。"
   },
   "PageAbout": {
-    "About This Project": "このプロジェクトについて",
-    "This project is a Next&#46;js template aimed at providing a robust starting point for building modern web applications&#46; It comes with pre-configured localization support, theme toggling, and various other features to streamline development&#46;": "このプロジェクトは、最新のWebアプリケーションを構築するための堅牢なスタートポイントを提供することを目的としたNext.jsテンプレートです。事前に構成されたローカリゼーションサポート、テーマ切り替え、その他のさまざまな機能が含まれており、開発を効率化します。",
-    "Project Details": "プロジェクトの詳細",
-    "This template is designed to help developers quickly set up a new Next&#46;js project with best practices and commonly needed features&#46; It includes:": "このテンプレートは、ベストプラクティスと一般的に必要とされる機能を備えた新しいNext.jsプロジェクトを迅速にセットアップできるよう設計されています。含まれている機能は以下の通りです：",
+    "About This Project": {
+      "title": "このプロジェクトについて",
+      "description": "このプロジェクトは、最新のWebアプリケーションを構築するための堅牢なスタートポイントを提供することを目的としたNext.jsテンプレートです。事前に構成されたローカリゼーションサポート、テーマ切り替え、その他のさまざまな機能が含まれており、開発を効率化します。"
+    },
+    "Project Details": {
+      "title": "プロジェクトの詳細",
+      "description": "このテンプレートは、ベストプラクティスと一般的に必要とされる機能を備えた新しいNext.jsプロジェクトを迅速にセットアップできるよう設計されています。含まれている機能は以下の通りです："
+    },
     "Localization with next-intl": "next-intlによるローカリゼーション",
     "Dark mode support with next-themes": "next-themesによるダークモードサポート",
     "Responsive design with Tailwind CSS": "Tailwind CSSによるレスポンシブデザイン",
     "Optimized performance with modern web standards": "最新のWeb標準による最適化されたパフォーマンス",
-    "Contributors": "貢献者",
-    "This project wouldn't be possible without the contributions of the following individuals:": "このプロジェクトは以下の個人の貢献なしには実現しませんでした：",
+    "Contributors": {
+      "title": "貢献者",
+      "description": "このプロジェクトは以下の個人の貢献なしには実現しませんでした："
+    },
     "Project Lead": "プロジェクトリード",
     "Modules & Packages Used": "使用しているモジュールとパッケージ",
-    "Acknowledgments": "謝辞",
-    "We would like to thank the Next&#46;js community and the various open-source projects that have inspired and supported this template&#46;": "Next.jsコミュニティおよびこのテンプレートにインスピレーションを与え、サポートしてくれたさまざまなオープンソースプロジェクトに感謝します。",
-    "Contact": "お問い合わせ",
-    "For any inquiries or contributions, please reach out to us via our": {
-      "text_1": "ご質問や貢献については、以下の",
-      "text_2": "GitHubリポジトリ",
-      "text_3": "を通じてお問い合わせください。"
+    "Acknowledgments": {
+      "title": "謝辞",
+      "description": "Next.jsコミュニティおよびこのテンプレートにインスピレーションを与え、サポートしてくれたさまざまなオープンソースプロジェクトに感謝します。"
+    },
+    "Call for Contributions": {
+      "title": "貢献の呼びかけ",
+      "description": "このテンプレートのドキュメントは包括的なものではありません。貢献者にはこのページで謝意を表します。"
+    },
+    "Contact": {
+      "title": "お問い合わせ",
+      "For any inquiries or contributions, please reach out to us via our": {
+        "text_1": "ご質問や貢献については、以下の",
+        "text_2": "GitHubリポジトリ",
+        "text_3": "を通じてお問い合わせください。"
+      }
     }
-  }
+  },
+  "Footer": {
+    "footerText": "著作権 © 2024 Fun117. 無断複写・転載を禁じます",
+    "items": {
+      "Resources": "リソース",
+      "Docs": "ドキュメント",
+      "Learn": "学ぶ",
+      "Showcase": "ショーケース",
+      "Blog": "ブログ",
+      "Analytics": "アナリティクス",
+      "Next&#46;js Conf": "Next.jsカンファレンス",
+      "Previews": "プレビュー",
+      "More": "その他",
+      "Next&#46;js Commerce": "Next.js コマース",
+      "Contact Sales": "コンタクトセールス",
+      "Releases": "リリース",
+      "Telemetry": "テレメトリ",
+      "Governance": "ガバナンス",
+      "About Vercel": "Vercelについて",
+      "Next&#46;js + Vercel": "Next.js + Vercel",
+      "Open Source Software": "オープンソースソフトウェア"
+    }
+  },
+  "Home": "ホーム",
+  "About": "概要"
 }

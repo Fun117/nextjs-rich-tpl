@@ -7,11 +7,13 @@ import Config from "@/types/richtpl.config";
 const config: Config = {
   // Tagline for the site
   tagline: "Next.js Template",
+
   // URL to the favicon
   favicon: "/favicon.ico",
 
   // Production URL of the site
-  url: "https://nextjs-rich-tpl.fun117.dev",
+  url: "https://nextjs-rich-tpl.vercel.app",
+
   // Base URL pathname (for GitHub Pages deployment)
   baseUrl: "/",
 
@@ -38,6 +40,7 @@ const config: Config = {
         path: "en", // Path prefix for English locale
       },
     },
+    selectButton: true, // Option to include a locale selection button
   },
 
   // Theme and layout configuration
@@ -45,14 +48,33 @@ const config: Config = {
     // Color mode settings
     colorMode: {
       defaultMode: "system", // Default color mode (light, dark, or system)
-      disableSwitch: true, // Whether to disable the color mode switch
+      selectSwitch: true, // Whether to allow switching color modes
     },
     // URL to the social card image (replace with your project's image)
-    image: "",
+    image: "/image/upload/front/nextjs/twitter-card.png",
     // Metadata for the site
     metadata: {
-      generator: "Next.js", // Generator of the site
-      publisher: "Vercel", // Publisher of the site
+      keywords: [
+        "Template",
+        "i18n",
+        "template",
+        "Next.js",
+        "autoprefixer",
+        "rich",
+        "tailwindcss",
+        "framer-motion",
+        "next-themes",
+        "vercel-hosting",
+        "next-intl",
+        "lucide-icons",
+      ],
+      authors: { name: "Fun117", url: "https://fun117.dev" },
+      creator: "Fun117",
+      icons: "/favicon.ico",
+      generator: "Next.js",
+      publisher: "Vercel",
+      robots: "follow, index",
+      metadataBase: new URL("https://nextjs-rich-tpl.vercel.app"),
     },
     // Header configuration
     header: {
@@ -69,21 +91,158 @@ const config: Config = {
           {
             label: "Home", // Label for the item
             to: "/", // Internal URL path
-            i18n: true, // Whether to include locale prefix in the URL
+            i18n_link: true, // Whether to include locale prefix in the URL
+            i18n_text: true, // Whether to include locale prefix in the Text
           },
           {
             label: "About", // Label for the item
             to: "/about", // Internal URL path
-            i18n: true, // Whether to include locale prefix in the URL
+            i18n_link: true, // Whether to include locale prefix in the URL
+            i18n_text: true, // Whether to include locale prefix in the Text
           },
         ],
         project: {
-          repository: "block",
+          repository: "block", // Display the repository link in the header
         },
       },
     },
-    // Footer configuration (currently empty, can be extended)
-    footer: {},
+    // Footer configuration
+    footer: {
+      // Title for the footer
+      title: "Richtpl",
+      // Logo configuration
+      logo: {
+        type: "Vercel", // Type of logo
+      },
+      // Social links configuration
+      social: {
+        github: true, // Whether to include a GitHub link
+        twitter: "Fun_117", // Twitter handle
+      },
+      footerText: {
+        i18n: true, // Whether the footer text should be localized
+      },
+      // Footer navigation items
+      items: [
+        {
+          title: "Resources", // Title for the section
+          title_i18n: true, // Whether the title should be localized
+          contents: [
+            {
+              label: "Docs", // Label for the item
+              href: "https://nextjs.org/docs", // External URL
+              target: "_blank", // Open link in a new tab
+              i18n_text: true, // Whether the text should be localized
+            },
+            {
+              label: "Learn",
+              href: "https://nextjs.org/learn",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "Showcase",
+              href: "https://nextjs.org/showcase",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "Blog",
+              href: "https://nextjs.org/blog",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "Analytics",
+              href: "https://vercel.com/analytics?utm_source=next-site&utm_medium=footer&utm_campaign=home",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "Next&#46;js Conf",
+              href: "https://nextjs.org/conf",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "Previews",
+              href: "https://vercel.com/products/previews?utm_source=next-site&utm_medium=footer&utm_campaign=home",
+              target: "_blank",
+              i18n_text: true,
+            },
+          ],
+        },
+        {
+          title: "More",
+          title_i18n: true,
+          contents: [
+            {
+              label: "Next&#46;js Commerce",
+              href: "https://vercel.com/templates/next.js/nextjs-commerce?utm_source=next-site&utm_medium=footer&utm_campaign=home",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "Contact Sales",
+              href: "https://vercel.com/contact/sales?utm_source=next-site&utm_medium=footer&utm_campaign=home",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "GitHub",
+              href: "https://github.com/vercel/next.js",
+              target: "_blank",
+            },
+            {
+              label: "Releases",
+              href: "https://github.com/vercel/next.js/releases",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "Telemetry",
+              href: "https://nextjs.org/telemetry",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "Governance",
+              href: "https://nextjs.org/governance",
+              target: "_blank",
+              i18n_text: true,
+            },
+          ],
+        },
+        {
+          title: "About Vercel",
+          title_i18n: true,
+          contents: [
+            {
+              label: "Next&#46;js + Vercel",
+              href: "https://vercel.com/solutions/nextjs?utm_source=next-site&utm_medium=footer&utm_campaign=home",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "Open Source Software",
+              href: "https://vercel.com/oss?utm_source=next-site&utm_medium=footer&utm_campaign=home",
+              target: "_blank",
+              i18n_text: true,
+            },
+            {
+              label: "GitHub",
+              href: "https://github.com/vercel",
+              target: "_blank",
+            },
+            {
+              label: "X",
+              href: "https://twitter.com/vercel",
+              target: "_blank",
+            },
+          ],
+        },
+      ],
+    },
   },
 };
 

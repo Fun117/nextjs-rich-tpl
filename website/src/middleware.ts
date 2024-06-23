@@ -5,10 +5,6 @@ import { locales, localePrefix, pathnames } from "@/components/i18n/nav";
 
 import richtplConfig from "../richtpl.config";
 
-let localePattern = richtplConfig.i18n.locales.join("|");
-localePattern = `(${localePattern})`;
-console.log(localePattern)
-
 export default createMiddleware({
   // A list of all locales that are supported
 

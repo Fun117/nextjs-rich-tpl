@@ -33,12 +33,20 @@ function LanguageSelest() {
     };
     handleLocaleChange(selectLocale);
   }, [selectLocale]);
+
+  if (!config.i18n.selectButton) {
+    return <></>;
+  }
+
   return (
     <Select
       defaultValue={lang || config.i18n.defaultLocale}
       onValueChange={setSelectLocale}
     >
-      <SelectTrigger className="w-[150px] focus:hidden">
+      <SelectTrigger
+        aria-label={t("Select a language")}
+        className="w-full max-w-[130px] focus:hidden"
+      >
         <SelectValue>
           <div className="flex flex-row items-center gap-2">
             <Globe className="w-5 h-5" />
