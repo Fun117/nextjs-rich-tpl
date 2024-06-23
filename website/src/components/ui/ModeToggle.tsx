@@ -52,7 +52,7 @@ export function ModeToggle({ variant, size, children, ...props }: ButtonProps) {
             <Button
               variant={variant || "ghost"}
               size={size || "icon"}
-              className="focus:hidden"
+              className="focus:hidden w-10 h-10"
               {...props}
             >
               <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

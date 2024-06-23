@@ -15,7 +15,7 @@ export default function Home() {
         </p>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
           <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-2"
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
@@ -62,7 +62,7 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+          <p className="m-0 max-w-[30ch] text-sm opacity-70">
             {t(
               "Find in-depth information about Next&#46;js features and API&#46;"
             )}
@@ -81,7 +81,7 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+          <p className="m-0 max-w-[30ch] text-sm opacity-70">
             {t(
               "Learn about Next&#46;js in an interactive course with quizzes!"
             )}
@@ -100,7 +100,7 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
+          <p className="m-0 max-w-[30ch] text-sm opacity-70">
             {t("Explore starter templates for Next&#46;js&#46;")}
           </p>
         </a>
@@ -117,7 +117,7 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
+          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-70">
             {t(
               "Instantly deploy your Next&#46;js site to a shareable URL with Vercel&#46;"
             )}

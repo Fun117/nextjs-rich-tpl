@@ -47,6 +47,7 @@ export function TLink({
       target={setTarget}
       onClick={onClick}
       className={className}
+      aria-label="link"
     >
       {i18n_text
         ? t(`${i18n_path}${i18n_path ? "." : ""}${children}`)

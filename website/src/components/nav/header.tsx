@@ -107,8 +107,8 @@ function Header() {
                   href={`https://github.com/${config.organizationName}/${config.projectName}`}
                   target="block"
                 >
-                  <Button variant="ghost" className="w-10 h-10 p-0" aria-label="GitHub project repository">
-                    <FaGithub className="text-xl" />
+                  <Button variant="ghost" className="w-10 h-10 p-2" aria-label="GitHub project repository">
+                    <FaGithub className="text-[21px]" />
                   </Button>
                 </Link>
               )}
@@ -136,7 +136,7 @@ function Header() {
                 target="block"
               >
                 <Button variant="ghost" className="w-10 h-10 p-0" aria-label="GitHub project repository">
-                  <FaGithub className="text-xl" />
+                  <FaGithub className="text-[21px]" />
                 </Button>
               </Link>
             )}
