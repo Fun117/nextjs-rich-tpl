@@ -20,10 +20,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/nav/header";
 import LoaderRo13 from "@/components/animation/loaderro13";
 import Footer from "@/components/nav/footer";
+import { headers } from "next/headers";
 
 export type LayoutProps = {
   params: { locale: string };
 };
+
 export async function generateMetadata(
   { params }: LayoutProps,
   parent: ResolvingMetadata
@@ -31,24 +33,31 @@ export async function generateMetadata(
   const lang = params.locale;
   const t = await getTranslations({ lang, namespace: "Metadata" });
 
+  const referer = headers().get("referer");
+  const url = referer ? new URL(referer) : null;
+  const path = url ? url.pathname : "";
+
   const generateAlternates = () => {
     const alternates: {
       canonical: string;
       languages: { [key: string]: string };
     } = {
-      canonical: config.url,
+      canonical: `${config.url}${path}`,
       languages: {},
     };
 
     for (const locale of config.i18n.locales) {
       const localeConfig = config.i18n.localeConfigs[locale];
+      const cleanPath = path.replace(`/${params.locale}`, ""); // Remove current locale from path
       alternates.languages[
         localeConfig.htmlLang
-      ] = `${config.url}/${localeConfig.path}`;
+      ] = `${config.url}/${localeConfig.path}${cleanPath}`;
     }
 
     return alternates;
   };
+
+  // console.log(`URL: ${referer}\n\n`,generateAlternates(),`\n`)
 
   return {
     title: {
@@ -75,7 +84,8 @@ export async function generateMetadata(
     generator: config.themeConfig?.metadata?.generator || "Next.js",
     publisher: config.themeConfig?.metadata?.publisher || "Vercel",
     robots: config.themeConfig?.metadata?.robots || "follow, index",
-    metadataBase: config.themeConfig?.metadata?.metadataBase || new URL(config.url),
+    metadataBase:
+      config.themeConfig?.metadata?.metadataBase || new URL(config.url),
     alternates: generateAlternates(),
     openGraph: {
       type: "website",
@@ -92,7 +102,9 @@ export async function generateMetadata(
         config.themeConfig?.metadata?.openGraph?.description ||
         config.description ||
         t(`description`),
-      images: config.themeConfig.metadata?.openGraph?.images || config.themeConfig.image,
+      images:
+        config.themeConfig.metadata?.openGraph?.images ||
+        config.themeConfig.image,
       locale:
         config.themeConfig?.metadata?.openGraph?.locale ||
         config.i18n.localeConfigs[lang].htmlLang ||
@@ -118,7 +130,9 @@ export async function generateMetadata(
         config.themeConfig?.metadata?.creator ||
         "Fun_117"
       }`,
-      images: config.themeConfig.metadata?.twitter?.images || config.themeConfig.image,
+      images:
+        config.themeConfig.metadata?.twitter?.images ||
+        config.themeConfig.image,
     },
     ...config.themeConfig?.metadata,
   };
@@ -151,9 +165,11 @@ export default async function LocaleLayout({
             <TooltipProvider>
               <Header />
               <main className="w-full h-full min-h-[calc(100dvh-64px)]">
-                <Suspense fallback={<LoaderRo13 time={-1}/>}>{children}</Suspense>
+                <Suspense fallback={<LoaderRo13 time={-1} />}>
+                  {children}
+                </Suspense>
               </main>
-              <Footer/>
+              <Footer />
             </TooltipProvider>
           </NextIntlClientProvider>
         </ThemeProvider>

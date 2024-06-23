@@ -68,7 +68,7 @@ export default function PageClientAbout() {
           <li>
             <Link
               href="https://fun117.dev"
-              className="text-blue-500 hover:underline"
+              className="text-blue-600 dark:text-blue-500 hover:underline"
               target="_block"
             >
               Fun117
@@ -85,7 +85,7 @@ export default function PageClientAbout() {
             <li key={idx}>
               <Link
                 href={module.href}
-                className="text-blue-500 hover:underline"
+                className="text-blue-600 dark:text-blue-500 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -116,7 +116,7 @@ export default function PageClientAbout() {
           )}
           <a
             href="https://github.com/fun117/nextjs-rich-tpl"
-            className="text-blue-500 hover:underline"
+            className="text-blue-600 dark:text-blue-500 hover:underline"
             target="_blank"
             rel="noopener noreferrer"
           >
