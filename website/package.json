@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.0-alpha",
+  "version": "0.1.2-beta",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -28,6 +28,9 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
     "@types/node": "^20.14.8",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

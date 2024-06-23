@@ -85,6 +85,10 @@ type ThemeConfig = {
   metadata?: Metadata; // Metadata for the site
   header?: Header; // Header configuration
   footer?: Footer; // Footer configuration
+  sitemap?: {
+    // List of directories to exclude from the sitemap
+    excludedDirs?: string[];
+  };
 };
 
 /**

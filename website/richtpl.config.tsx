@@ -243,6 +243,14 @@ const config: Config = {
         },
       ],
     },
+    // Sitemap Configuration
+    sitemap: {
+      excludedDirs: [
+        "error", // Directory for error pages
+        "not-found", // Directory for 404 pages
+        "[...rest]", // Directory for [...rest] pages
+      ],
+    },
   },
 };
 
