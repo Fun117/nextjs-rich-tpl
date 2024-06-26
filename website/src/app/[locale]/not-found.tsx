@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 
 import type { Metadata } from "next";
-import NotFound from "@/components/page/not-found";
+import NotFound from "@/components/pages/not-found";
 
 export const metadata: Metadata = {
   title: "Page not found",

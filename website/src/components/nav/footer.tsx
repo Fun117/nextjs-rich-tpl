@@ -4,8 +4,8 @@ import Link from "next/link";
 import React from "react";
 import config from "../../../richtpl.config";
 import { FaGithub, FaTwitter } from "react-icons/fa";
-import LanguageSelest from "../i18n/LanguageSelest";
-import { TLink } from "../i18n/Tcomps";
+import LanguageSelest from "../ui/LanguageSelest";
+import { TLink } from "../ui/Tcomps";
 import { useTranslations } from "next-intl";
 
 function Footer() {
@@ -104,7 +104,7 @@ function Footer() {
               </div>
             ))}
           </div>
-          <div className="flex flex-row justify-between items-center mt-12 mb-0 text-sm">
+          <div className="flex flex-wrap flex-row justify-between items-center gap-2 mt-12 mb-0 text-sm">
             <div className="flex flex-col justify-start items-stretch gap-4">
               <p className="">
                 {config.themeConfig.footer?.footerText?.i18n

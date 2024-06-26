@@ -1,6 +1,5 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Button } from "../ui/button";
 
 const Path = (props: any) => (
   <motion.path

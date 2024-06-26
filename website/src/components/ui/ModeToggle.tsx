@@ -24,6 +24,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import config from "../../../richtpl.config";
 
 // ModeToggle types
 export interface ModeButtonProps
@@ -43,6 +44,10 @@ export interface ModeButtonProps
 export function ModeToggle({ variant, size, children, ...props }: ButtonProps) {
   const t = useTranslations("Theme");
   const { setTheme } = useTheme();
+
+  if (!config.themeConfig.colorMode.selectSwitch) {
+    return <></>;
+  }
 
   return (
     <DropdownMenu>

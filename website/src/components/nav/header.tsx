@@ -7,12 +7,12 @@ import { motion, useCycle } from "framer-motion";
 
 import { FaGithub } from "react-icons/fa";
 
-import { TLink } from "@/components/i18n/Tcomps";
-import { LogoVercel_Nextjs } from "@/components/logo/vercel_nextjs";
+import { TLink } from "@/components/ui/Tcomps";
+import { LogoVercel_Nextjs } from "@/components/ui/vercel_nextjs";
 import { ModeToggle } from "@/components/ui/ModeToggle";
-import { MenuToggle } from "@/components/nav/MenuToggle";
+import { MenuToggle } from "@/components/ui/MenuToggle";
 import { useLocale, useTranslations } from "next-intl";
-import LanguageSelest from "../i18n/LanguageSelest";
+import LanguageSelest from "../ui/LanguageSelest";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
@@ -151,14 +151,14 @@ function Header() {
       >
         <nav className="flex flex-col justify-between items-start gap-3 w-full h-full p-6">
           <div className="flex flex-col justify-between items-start gap-3 w-full h-full">
-            <div className="flex flex-col justify-start items-start gap-3">
+            <div className="flex flex-col justify-start items-start gap-3 w-full">
               <NavItems type="left" />
             </div>
-            <div className="flex flex-col justify-start items-start gap-3">
+            <div className="flex flex-col justify-start items-start gap-3 w-full">
               <NavItems type="right" />
-              <div className="flex justify-start items-center gap-3 mt-2">
+              <div className="flex justify-start items-center gap-3 w-full mt-2">
                 {config.themeConfig.colorMode.selectSwitch && (
-                  <ModeToggle onClick={() => toggleOpen()} />
+                  <ModeToggle/>
                 )}
                 <LanguageSelest />
               </div>
