@@ -85,3 +85,14 @@
     overflow: scroll;
   }
 }
+
+.scrollbar-none {
+  /* IE(Internet Explorer)・Microsoft Edgeへの対応 */
+  -ms-overflow-style: none;
+  /* Firefoxへの対応 */
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  /* Google Chrome、Safariへの対応 */
+  display: none;
+}

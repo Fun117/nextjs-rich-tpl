@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslations } from "next-intl";
-import LoaderRo13 from "@/components/animation/loaderro13";
+import LoaderRo13 from "@/components/ui/loaderro13";
 
 function Loading() {
   const t = useTranslations();

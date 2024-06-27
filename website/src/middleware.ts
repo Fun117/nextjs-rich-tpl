@@ -1,7 +1,7 @@
 // website/src/middleware.ts
 
 import createMiddleware from "next-intl/middleware";
-import { locales, localePrefix, pathnames } from "@/components/i18n/nav";
+import { locales, localePrefix, pathnames } from "@/components/provider/nav";
 
 import richtplConfig from "../richtpl.config";
 import { NextRequest, NextResponse } from "next/server";

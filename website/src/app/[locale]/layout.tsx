@@ -18,7 +18,7 @@ import { ThemeProvider } from "@/components/provider/theme";
 // ui
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/nav/header";
-import LoaderRo13 from "@/components/animation/loaderro13";
+import LoaderRo13 from "@/components/ui/loaderro13";
 import Footer from "@/components/nav/footer";
 import { headers } from "next/headers";
 
