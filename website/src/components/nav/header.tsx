@@ -43,11 +43,28 @@ function Header() {
         {config.themeConfig.header?.logo?.type === "Vercel&Next.js" ? (
           <LogoVercel_Nextjs />
         ) : (
-          config.themeConfig.header?.logo?.content || (
-            <h1 className="text-2xl font-bold">
-              {config.themeConfig.header?.title}
-            </h1>
-          )
+          <>
+            {config.themeConfig.header?.logo?.href ? (
+              <Link
+                href={config.themeConfig.header?.logo?.href}
+                aria-label="Logo"
+              >
+                {config.themeConfig.header?.logo?.content || (
+                  <h1 className="text-2xl font-bold">
+                    {config.themeConfig.header?.title}
+                  </h1>
+                )}
+              </Link>
+            ) : (
+              <>
+                {config.themeConfig.header?.logo?.content || (
+                  <h1 className="text-2xl font-bold">
+                    {config.themeConfig.header?.title}
+                  </h1>
+                )}
+              </>
+            )}
+          </>
         )}
       </>
     );
@@ -107,7 +124,11 @@ function Header() {
                   href={`https://github.com/${config.organizationName}/${config.projectName}`}
                   target="block"
                 >
-                  <Button variant="ghost" className="w-10 h-10 p-2" aria-label="GitHub project repository">
+                  <Button
+                    variant="ghost"
+                    className="w-10 h-10 p-2"
+                    aria-label="GitHub project repository"
+                  >
                     <FaGithub className="text-[21px]" />
                   </Button>
                 </Link>
@@ -135,7 +156,11 @@ function Header() {
                 href={`https://github.com/${config.organizationName}/${config.projectName}`}
                 target="block"
               >
-                <Button variant="ghost" className="w-10 h-10 p-0" aria-label="GitHub project repository">
+                <Button
+                  variant="ghost"
+                  className="w-10 h-10 p-0"
+                  aria-label="GitHub project repository"
+                >
                   <FaGithub className="text-[21px]" />
                 </Button>
               </Link>
@@ -157,9 +182,7 @@ function Header() {
             <div className="flex flex-col justify-start items-start gap-3 w-full">
               <NavItems type="right" />
               <div className="flex justify-start items-center gap-3 w-full mt-2">
-                {config.themeConfig.colorMode.selectSwitch && (
-                  <ModeToggle/>
-                )}
+                {config.themeConfig.colorMode.selectSwitch && <ModeToggle />}
                 <LanguageSelest />
               </div>
             </div>
