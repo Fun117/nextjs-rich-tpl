@@ -29,6 +29,7 @@ type localeConfig = {
 type Header = {
   title: string; // Header title
   logo?: {
+    href?: string; // URL
     type?: "Vercel&Next.js"; // Type of logo
     content?: React.ReactNode | React.JSX.Element; // Logo content
   };
@@ -50,6 +51,7 @@ type Footer = {
   title: string; // Footer title
   // Logo configuration
   logo?: {
+    href?: string; // URL
     type?: "Vercel"; // Type of logo
     i18n?: boolean; // Whether the logo should be localized
     content?: React.ReactNode | React.JSX.Element; // Logo content

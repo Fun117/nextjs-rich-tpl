@@ -112,6 +112,7 @@ const config: Config = {
       title: "Richtpl",
       // Logo configuration
       logo: {
+        href: "https://vercel.com/home?utm_source=next-site&utm_medium=footer&utm_campaign=next-website",
         type: "Vercel", // Type of logo
       },
       // Social links configuration

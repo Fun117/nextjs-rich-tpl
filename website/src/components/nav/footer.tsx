@@ -74,9 +74,16 @@ function Footer() {
         <div className="min-h-[400px] py-9">
           <div className="grid gap-8 grid-cols-[repeat(auto-fill,minmax(140px,1fr))] lg:flex flex-wrap justify-between">
             <div className="flex flex-row justify-between items-center lg:items-stretch col-span-full">
-              <Link href="https://vercel.com/home?utm_source=next-site&utm_medium=footer&utm_campaign=next-website" aria-label="Logo">
+              {config.themeConfig.footer?.logo?.href ? (
+                <Link
+                  href={config.themeConfig.footer?.logo?.href}
+                  aria-label="Logo"
+                >
+                  <Logo />
+                </Link>
+              ) : (
                 <Logo />
-              </Link>
+              )}
               <div className="lg:hidden flex flex-row justify-start items-center gap-3">
                 <SocialButtons />
               </div>
