@@ -7,7 +7,7 @@ import React from "react";
 // Turl関数はロケールを含むURLを生成します
 export function Turl(url: string) {
   const lang = useLocale();
-  return `${lang}/${url}`;
+  return `/${lang}${url}`;
 }
 
 // TLinkPropsインターフェースはTLinkコンポーネントのプロパティを定義します
@@ -24,7 +24,7 @@ interface TLinkProps {
 }
 
 // TLinkコンポーネントは国際化対応のリンクを生成します
-export function TLink({
+const TLink = React.forwardRef<HTMLAnchorElement, TLinkProps>(({
   children,
   className,
   to,
@@ -34,11 +34,11 @@ export function TLink({
   i18n_text = false,
   i18n_path = "",
   onClick,
-}: TLinkProps) {
+}, ref) => {
   const t = useTranslations();
   const lang = useLocale();
 
-  const hrefUrl = to ? (i18n_link ? `/${lang}/${to}` : `/${to}`) : href || "";
+  const hrefUrl = to ? (i18n_link ? `/${lang}${to}` : `${to}`) : href || "";
   const setTarget = target || (to ? "_self" : "_blank");
 
   return (
@@ -48,10 +48,15 @@ export function TLink({
       onClick={onClick}
       className={className}
       aria-label="link"
+      ref={ref}
     >
       {i18n_text
         ? t(`${i18n_path}${i18n_path ? "." : ""}${children}`)
         : children}
     </Link>
   );
-}
+});
+
+TLink.displayName = "TLink";
+
+export { TLink };
