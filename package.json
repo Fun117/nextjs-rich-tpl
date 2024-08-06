@@ -1,6 +1,6 @@
 {
-  "name": "website",
-  "version": "0.1.5-beta",
+  "name": "nextjs-rich-tpl",
+  "version": "0.1.8-dev",
   "private": true,
   "scripts": {
     "dev": "next dev",
