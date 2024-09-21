@@ -68,7 +68,7 @@
 
 テンプレートを Vercel にデプロイするか、StackBlitz でプレビューすることができます：
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Fun117/nextjs-rich-tpl&project-name=nextjs-rich-tpl&repository-name=nextjs-rich-tpl)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Fun117/nextjs-rich-tpl/tree/main/examples/app/with-i18n-routing&project-name=nextjs-rich-tpl&repository-name=nextjs-rich-tpl)
 
 ## 使い方
 
