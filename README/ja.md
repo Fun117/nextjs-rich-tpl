@@ -113,8 +113,8 @@ export default {
     defaultLocale: "en",
     locales: ["en", "ja"],
     localeConfigs: {
-      en: { label: "English", htmlLang: "en", path: "/" },
-      ja: { label: "日本語", htmlLang: "ja", path: "/ja" },
+      en: { label: "English", htmlLang: "en", path: "en" },
+      ja: { label: "日本語", htmlLang: "ja", path: "ja" },
     },
   },
   themeConfig: {
