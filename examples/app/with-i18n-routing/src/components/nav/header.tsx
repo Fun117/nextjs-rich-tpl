@@ -8,7 +8,7 @@ import { motion, useCycle } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 
 import { TLink } from "@/components/ui/Tcomps";
-import { LogoVercel_Nextjs } from "@/components/ui/vercel_nextjs";
+import { LogoVercelNextjs } from "@/components/ui/LogoVercelNextjs";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 import { MenuToggle } from "@/components/ui/MenuToggle";
 import LanguageSelest from "../ui/LanguageSelest";
@@ -38,7 +38,7 @@ function Header() {
     return (
       <>
         {config.themeConfig.header?.logo?.type === "Vercel&Next.js" ? (
-          <LogoVercel_Nextjs />
+          <LogoVercelNextjs />
         ) : (
           <>
             {config.themeConfig.header?.logo?.href ? (

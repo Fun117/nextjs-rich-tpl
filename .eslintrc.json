@@ -13,6 +13,7 @@
         "varsIgnorePattern": "^_",
         "ignoreRestSiblings": true
       }
-    ]
+    ],
+    "react/jsx-pascal-case": "error"
   }
 }

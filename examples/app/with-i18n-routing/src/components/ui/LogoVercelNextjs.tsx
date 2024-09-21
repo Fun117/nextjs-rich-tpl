@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LogoNextjs, LogoVercel, Slash } from "@/components/ui/svg-92-logo";
 
-export function LogoVercel_Nextjs() {
+export function LogoVercelNextjs() {
   return (
     <>
       <Link
