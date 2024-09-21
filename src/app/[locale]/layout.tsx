@@ -33,9 +33,8 @@ export async function generateMetadata(
   const lang = params.locale;
   const t = await getTranslations({ lang, namespace: "Metadata" });
 
-  const referer = headers().get("referer");
-  const url = referer ? new URL(referer) : null;
-  const path = url ? url.pathname : "";
+  const pathname = headers().get("x-pathname");
+  const path = pathname ? pathname : "";
 
   const generateAlternates = () => {
     const alternates: {
@@ -56,8 +55,6 @@ export async function generateMetadata(
 
     return alternates;
   };
-
-  // console.log(`URL: ${referer}\n\n`,generateAlternates(),`\n`)
 
   return {
     title: {

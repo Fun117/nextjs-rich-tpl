@@ -1,4 +1,4 @@
-// website/src/middleware.ts
+// /src/middleware.ts
 
 import createMiddleware from "next-intl/middleware";
 import { locales, localePrefix, pathnames } from "@/components/provider/nav";
@@ -17,29 +17,18 @@ const intlMiddleware = createMiddleware({
 });
 
 export function middleware(request: NextRequest) {
-  // Add a new header x-current-path which passes the path to downstream components
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-pathname", request.nextUrl.pathname);
+  // intlMiddleware を実行して、結果を取得
+  let response = intlMiddleware(request);
 
-  // console.log(requestHeaders);
+  // intlMiddleware がレスポンスを返さなかった場合、デフォルトのNextResponseを作成
+  if (!response) {
+    response = NextResponse.next();
+  }
 
-  const response = NextResponse.next({
-    request: {
-      // Apply new request headers
-      headers: requestHeaders,
-    },
-  });
+  // カスタムヘッダーを追加する処理
+  response.headers.set("x-pathname", request.nextUrl.pathname);
 
-  // // ヘッダー情報をログに出力
-  // const headersList = request.headers;
-  // console.log("\n\n ");
-  // headersList.forEach((value, key) => {
-  //   console.log(`${key}: ${value}`);
-  // });
-  // console.log("\n\n ");
-
-  // 既存のintlミドルウェアを呼び出す
-  return intlMiddleware(request) || response;
+  return response;
 }
 
 export const config = {
