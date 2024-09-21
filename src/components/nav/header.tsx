@@ -2,7 +2,7 @@
 
 import config from "../../../richtpl.config";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
 
 import { FaGithub } from "react-icons/fa";
@@ -11,16 +11,12 @@ import { TLink } from "@/components/ui/Tcomps";
 import { LogoVercel_Nextjs } from "@/components/ui/vercel_nextjs";
 import { ModeToggle } from "@/components/ui/ModeToggle";
 import { MenuToggle } from "@/components/ui/MenuToggle";
-import { useLocale, useTranslations } from "next-intl";
 import LanguageSelest from "../ui/LanguageSelest";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { SearchCommandDialog } from "../ui/command-search";
 
 function Header() {
-  const t = useTranslations("Languages");
-  const lang = useLocale();
-
   const [isOpen, toggleOpen] = useCycle(false, true);
 
   useEffect(() => {

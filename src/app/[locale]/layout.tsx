@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -28,7 +28,6 @@ export type LayoutProps = {
 
 export async function generateMetadata(
   { params }: LayoutProps,
-  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const lang = params.locale;
   const t = await getTranslations({ lang, namespace: "Metadata" });
@@ -149,7 +148,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className="relative w-full h-full min-h-dvh overflow-x-clip"
+        className={`${inter} relative w-full h-full min-h-dvh overflow-x-clip`}
         suppressHydrationWarning
       >
         <ThemeProvider

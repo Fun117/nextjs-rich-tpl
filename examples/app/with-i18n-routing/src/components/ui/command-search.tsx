@@ -2,14 +2,8 @@
 
 import * as React from "react";
 import {
-  Calculator,
-  Calendar,
   Command,
-  CreditCard,
   Search,
-  Settings,
-  Smile,
-  User,
 } from "lucide-react";
 
 import {
@@ -19,11 +13,8 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
 import config from "../../../richtpl.config";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { DialogTitle } from "./dialog";
 import { TLink } from "./Tcomps";

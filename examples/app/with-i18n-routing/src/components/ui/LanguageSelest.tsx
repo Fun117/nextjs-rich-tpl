@@ -32,7 +32,7 @@ function LanguageSelest() {
       router.push(`/${newLocale}/${pathname}`);
     };
     handleLocaleChange(selectLocale);
-  }, [selectLocale]);
+  }, [selectLocale, router, pathname]);
 
   if (!config.i18n.selectButton) {
     return <></>;
