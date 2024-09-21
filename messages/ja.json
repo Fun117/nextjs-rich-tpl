@@ -21,6 +21,39 @@
     "Language": "言語",
     "Select a language": "言語を選択"
   },
+  "SearchCommand": {
+    "Search website&#46;&#46;&#46;": "サイト内検索...",
+    "Search&#46;&#46;&#46;": "検索...",
+    "No results found&#46;": "結果は見つかりませんでした。",
+    "Type a command or search&#46;&#46;&#46;": "コマンドの入力または検索...",
+    "items": {
+      "Pages": "ページ",
+      "Home": "ホーム",
+      "About": "概要"
+    }
+  },
+  "Footer": {
+    "footerText": "著作権 © 2024 Fun117. 無断複写・転載を禁じます",
+    "items": {
+      "Resources": "リソース",
+      "Docs": "ドキュメント",
+      "Learn": "学ぶ",
+      "Showcase": "ショーケース",
+      "Blog": "ブログ",
+      "Analytics": "アナリティクス",
+      "Next&#46;js Conf": "Next.jsカンファレンス",
+      "Previews": "プレビュー",
+      "More": "その他",
+      "Next&#46;js Commerce": "Next.js コマース",
+      "Contact Sales": "コンタクトセールス",
+      "Releases": "リリース",
+      "Telemetry": "テレメトリ",
+      "Governance": "ガバナンス",
+      "About Vercel": "Vercelについて",
+      "Next&#46;js + Vercel": "Next.js + Vercel",
+      "Open Source Software": "オープンソースソフトウェア"
+    }
+  },
   "PageHome": {
     "Get started by editing": "編集を始める",
     "By": "提供",
@@ -67,28 +100,6 @@
         "text_2": "GitHubリポジトリ",
         "text_3": "を通じてお問い合わせください。"
       }
-    }
-  },
-  "Footer": {
-    "footerText": "著作権 © 2024 Fun117. 無断複写・転載を禁じます",
-    "items": {
-      "Resources": "リソース",
-      "Docs": "ドキュメント",
-      "Learn": "学ぶ",
-      "Showcase": "ショーケース",
-      "Blog": "ブログ",
-      "Analytics": "アナリティクス",
-      "Next&#46;js Conf": "Next.jsカンファレンス",
-      "Previews": "プレビュー",
-      "More": "その他",
-      "Next&#46;js Commerce": "Next.js コマース",
-      "Contact Sales": "コンタクトセールス",
-      "Releases": "リリース",
-      "Telemetry": "テレメトリ",
-      "Governance": "ガバナンス",
-      "About Vercel": "Vercelについて",
-      "Next&#46;js + Vercel": "Next.js + Vercel",
-      "Open Source Software": "オープンソースソフトウェア"
     }
   },
   "Home": "ホーム",

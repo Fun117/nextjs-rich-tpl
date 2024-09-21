@@ -15,6 +15,7 @@ import { useLocale, useTranslations } from "next-intl";
 import LanguageSelest from "../ui/LanguageSelest";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { SearchCommandDialog } from "../ui/command-search";
 
 function Header() {
   const t = useTranslations("Languages");
@@ -111,27 +112,33 @@ function Header() {
 
   return (
     <>
-      <header className="bg-[rgba(255,255,255,0.8)] dark:bg-[rgba(0,0,0,.8)] sticky top-0 z-[1000] flex flex-col justify-around items-center w-full h-16 px-6 border-b border-neutral-200 dark:border-neutral-800 shadow-md backdrop-blur-sm">
+      <header className="bg-[rgba(255,255,255,0.8)] dark:bg-[rgba(0,0,0,.8)] sticky top-0 z-[50] flex flex-col justify-around items-center w-full h-16 px-6 border-b border-neutral-200 dark:border-neutral-800 shadow-sm backdrop-blur-md">
         <nav className="relative flex items-center w-full max-w-[var(--ds-page-width)]">
           <div className="flex lg:hidden justify-between items-center w-full">
             <div className="flex gap-2">
               <Logo />
             </div>
             <div className="flex items-center gap-1">
-              {config.themeConfig.header?.items?.project?.repository ===
-                "block" && (
-                <Link
-                  href={`https://github.com/${config.organizationName}/${config.projectName}`}
-                  target="block"
-                >
-                  <Button
-                    variant="ghost"
-                    className="w-10 h-10 p-2"
-                    aria-label="GitHub project repository"
-                  >
-                    <FaGithub className="text-[21px]" />
-                  </Button>
-                </Link>
+              {config.themeConfig.SearchCommand ? (
+                <SearchCommandDialog maxWidth={1024} />
+              ) : (
+                <>
+                  {config.themeConfig.header?.items?.project?.repository ===
+                    "block" && (
+                    <Link
+                      href={`https://github.com/${config.organizationName}/${config.projectName}`}
+                      target="block"
+                    >
+                      <Button
+                        variant="ghost"
+                        className="w-10 h-10 p-2"
+                        aria-label="GitHub project repository"
+                      >
+                        <FaGithub className="text-[21px]" />
+                      </Button>
+                    </Link>
+                  )}
+                </>
               )}
               <motion.div
                 initial={false}
@@ -148,7 +155,7 @@ function Header() {
             </div>
             <NavItems type="left" />
           </div>
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3 w-fit">
             <NavItems type="right" />
             {config.themeConfig.header?.items?.project?.repository ===
               "block" && (
@@ -165,6 +172,7 @@ function Header() {
                 </Button>
               </Link>
             )}
+            <SearchCommandDialog minWidth={1024} />
             <ModeToggle />
           </div>
         </nav>
@@ -183,6 +191,25 @@ function Header() {
               <NavItems type="right" />
               <div className="flex justify-start items-center gap-3 w-full mt-2">
                 {config.themeConfig.colorMode.selectSwitch && <ModeToggle />}
+                {config.themeConfig.SearchCommand && (
+                  <>
+                    {config.themeConfig.header?.items?.project?.repository ===
+                      "block" && (
+                      <Link
+                        href={`https://github.com/${config.organizationName}/${config.projectName}`}
+                        target="block"
+                      >
+                        <Button
+                          variant="ghost"
+                          className="w-10 h-10 p-2"
+                          aria-label="GitHub project repository"
+                        >
+                          <FaGithub className="text-[21px]" />
+                        </Button>
+                      </Link>
+                    )}
+                  </>
+                )}
                 <LanguageSelest />
               </div>
             </div>

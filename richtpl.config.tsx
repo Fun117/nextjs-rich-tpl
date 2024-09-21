@@ -1,4 +1,5 @@
 import Config from "@/types/richtpl.config";
+import { Book, Home } from "lucide-react";
 
 /**
  * Site configuration object.
@@ -76,6 +77,27 @@ const config: Config = {
       robots: "follow, index",
       metadataBase: new URL("https://nextjs-rich-tpl.vercel.app"),
     },
+    SearchCommand: [
+      {
+        label: "Pages",
+        i18n_text: true,
+        items: [
+          {
+            label: "Home",
+            icon: <Home />,
+            to: "/",
+            i18n_text: true,
+          },
+          {
+            label: "About",
+            icon: <Book />,
+            to: "/about",
+            i18n_text: true,
+            i18n_link: true,
+          },
+        ],
+      },
+    ],
     // Header configuration
     header: {
       // Title for the header

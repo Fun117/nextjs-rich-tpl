@@ -21,6 +21,39 @@
     "Language": "Language",
     "Select a language": "Select a language"
   },
+  "SearchCommand": {
+    "Search website&#46;&#46;&#46;": "Search website...",
+    "Search&#46;&#46;&#46;": "Search...",
+    "No results found&#46;": "No results found.",
+    "Type a command or search&#46;&#46;&#46;": "Type a command or search...",
+    "items": {
+      "Pages": "Pages",
+      "Home": "Home",
+      "About": "About"
+    }
+  },
+  "Footer": {
+    "footerText": "Copyright © 2024 Fun117. All rights reserved.",
+    "items": {
+      "Resources": "Resources",
+      "Docs": "Docs",
+      "Learn": "Learn",
+      "Showcase": "Showcase",
+      "Blog": "Blog",
+      "Analytics": "Analytics",
+      "Next&#46;js Conf": "Next.js Conf",
+      "Previews": "Previews",
+      "More": "More",
+      "Next&#46;js Commerce": "Next.js Commerce",
+      "Contact Sales": "Contact Sales",
+      "Releases": "Releases",
+      "Telemetry": "Telemetry",
+      "Governance": "Governance",
+      "About Vercel": "About Vercel",
+      "Next&#46;js + Vercel": "Next.js + Vercel",
+      "Open Source Software": "Open Source Software"
+    }
+  },
   "PageHome": {
     "Get started by editing": "Get started by editing",
     "By": "By",
@@ -67,28 +100,6 @@
         "text_2": "GitHub repository",
         "text_3": "."
       }
-    }
-  },
-  "Footer": {
-    "footerText": "Copyright © 2024 Fun117. All rights reserved.",
-    "items": {
-      "Resources": "Resources",
-      "Docs": "Docs",
-      "Learn": "Learn",
-      "Showcase": "Showcase",
-      "Blog": "Blog",
-      "Analytics": "Analytics",
-      "Next&#46;js Conf": "Next.js Conf",
-      "Previews": "Previews",
-      "More": "More",
-      "Next&#46;js Commerce": "Next.js Commerce",
-      "Contact Sales": "Contact Sales",
-      "Releases": "Releases",
-      "Telemetry": "Telemetry",
-      "Governance": "Governance",
-      "About Vercel": "About Vercel",
-      "Next&#46;js + Vercel": "Next.js + Vercel",
-      "Open Source Software": "Open Source Software"
     }
   },
   "Home": "Home",
