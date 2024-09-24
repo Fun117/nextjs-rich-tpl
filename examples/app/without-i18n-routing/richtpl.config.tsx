@@ -85,15 +85,14 @@ const config: Config = {
           {
             label: "Home",
             icon: <Home />,
-            to: "/",
+            href: "/",
             i18n_text: true,
           },
           {
             label: "About",
             icon: <Book />,
-            to: "/about",
+            href: "/about",
             i18n_text: true,
-            i18n_link: true,
           },
         ],
       },
@@ -112,14 +111,12 @@ const config: Config = {
         left: [
           {
             label: "Home", // Label for the item
-            to: "/", // Internal URL path
-            i18n_link: true, // Whether to include locale prefix in the URL
+            href: "/", // Internal URL path
             i18n_text: true, // Whether to include locale prefix in the Text
           },
           {
             label: "About", // Label for the item
-            to: "/about", // Internal URL path
-            i18n_link: true, // Whether to include locale prefix in the URL
+            href: "/about", // Internal URL path
             i18n_text: true, // Whether to include locale prefix in the Text
           },
         ],

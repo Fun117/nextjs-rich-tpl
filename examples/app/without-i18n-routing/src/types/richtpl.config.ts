@@ -33,10 +33,8 @@ type SearchCommandItem = {
   icon: React.ReactNode; // Icon for the item
   action?: () => void; // Action to be performed when the item is clicked
   href?: string; // URL for the item
-  to?: string; // Internal URL
   target?: HTMLAttributeAnchorTarget; // Target attribute for the link (optional)
   i18n_text?: boolean; // Whether the text should be localizedL
-  i18n_link?: boolean; // Whether the link should be localized
 };
 
 /**
@@ -121,10 +119,8 @@ type ThemeConfig = {
 type NavItem = {
   label: string; // Display label for the navigation item
   href?: string; // External URL
-  to?: string; // Internal URL path
   target?: HTMLAttributeAnchorTarget; // Link target attribute
   i18n_text?: boolean; // Whether the text should be localized
-  i18n_link?: boolean; // Whether to include locale prefix in the URL
 };
 
 /**
