@@ -103,9 +103,7 @@ export function SearchCommandDialog({ minWidth, maxWidth }: { minWidth?: number,
                     key={index}
                     onClick={() => setOpen((open) => !open)}
                     href={item.href}
-                    to={item.to}
                     target={item.target}
-                    i18n_link={item.i18n_link || false}
                   >
                     <CommandItem>
                       <span className="mr-2">{item.icon}</span>

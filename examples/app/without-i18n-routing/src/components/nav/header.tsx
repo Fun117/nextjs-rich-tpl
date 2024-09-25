@@ -76,8 +76,6 @@ function Header() {
               key={idx}
               target={link.target}
               href={link.href}
-              to={link.to}
-              i18n_link={link.i18n_link || false}
               i18n_text={link.i18n_text || false}
               onClick={() => toggleOpen()}
             >
@@ -94,8 +92,6 @@ function Header() {
             key={idx}
             target={link.target}
             href={link.href}
-            to={link.to}
-            i18n_link={link.i18n_link || false}
             i18n_text={link.i18n_text || false}
             onClick={() => toggleOpen()}
           >

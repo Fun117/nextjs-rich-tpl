@@ -99,8 +99,6 @@ function Footer() {
                     key={idx2}
                     target={link.target}
                     href={link.href}
-                    to={link.to}
-                    i18n_link={link.i18n_link || false}
                     i18n_text={link.i18n_text || false}
                     className="text-sm font-base w-fit mb-3 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all duration-300 ease-in-out"
                     i18n_path="Footer.items"
