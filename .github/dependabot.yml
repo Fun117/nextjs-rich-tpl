@@ -19,3 +19,31 @@ updates:
         update-types:
           - "minor"
           - "patch"
+  - package-ecosystem: "npm"
+    directory: "/examples/app/with-i18n-routing"
+    schedule:
+      interval: "daily"
+    ignore:
+      - dependency-name: "eslint"
+    groups:
+      angular:
+        applies-to: version-updates
+        patterns:
+          - "tar"
+        update-types:
+          - "minor"
+          - "patch"
+  - package-ecosystem: "npm"
+    directory: "/examples/app/without-i18n-routing"
+    schedule:
+      interval: "daily"
+    ignore:
+      - dependency-name: "eslint"
+    groups:
+      angular:
+        applies-to: version-updates
+        patterns:
+          - "tar"
+        update-types:
+          - "minor"
+          - "patch"
