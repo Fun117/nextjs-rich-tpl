@@ -19,3 +19,18 @@ updates:
         update-types:
           - "minor"
           - "patch"
+  - package-ecosystem: "npm"
+    directories:
+      - "/examples/*"
+    schedule:
+      interval: "daily"
+    ignore:
+      - dependency-name: "eslint"
+    groups:
+      angular:
+        applies-to: version-updates
+        patterns:
+          - "tar"
+        update-types:
+          - "minor"
+          - "patch"
