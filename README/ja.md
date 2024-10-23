@@ -72,11 +72,35 @@
 
 ## 使い方
 
-プロジェクトをブートストラップするには、リポジトリをクローンします：
+プロジェクトをブートストラップするには、CLI を使用します：
+
+### インストール
+
+以下のコマンドを使用して、`nextjs-rich-tpl` をグローバルにインストールできます。
+
+```bash
+npm install -g nextjs-rich-tpl
+```
+
+### CLIの使い方
+
+プロジェクトを作成するには、以下のコマンドを実行します。
+
+```bash
+npx nextjs-rich-tpl
+```
+
+コマンドを実行すると、次の手順が表示されます：
+
+1. 使用する Next.js テンプレートの選択
+2. プロジェクト名の入力
+3. プロジェクトの作成と依存関係のインストール
+
+<!-- プロジェクトをブートストラップするには、リポジトリをクローンします：
 
 ```bash
 git clone https://github.com/fun117/nextjs-rich-tpl.git
-```
+``` -->
 
 クラウドにデプロイするには、[Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) を使用してください（公式 [documentation](https://nextjs.org/docs/deployment) を参照）。
 

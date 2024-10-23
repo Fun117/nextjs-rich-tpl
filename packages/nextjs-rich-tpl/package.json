@@ -1,0 +1,42 @@
+{
+  "name": "nextjs-rich-tpl",
+  "version": "0.0.1-pr-1915t-20241023",
+  "type": "module",
+  "description": "A command-line tool to scaffold Next.js projects with rich templates and features.",
+  "bin": {
+    "nextjs-rich-tpl": "./bin/create.mjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Fun117 <fun117.kun@gmail.com> (https://fun117.dev)",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fun117/nextjs-rich-tpl.git",
+    "directory": "packages/nextjs-rich-tpl"
+  },
+  "bugs": {
+    "url": "https://github.com/fun117/nextjs-rich-tpl/issues",
+    "email": "fun117.kun@gmail.com"
+  },
+  "homepage": "https://github.com/fun117/nextjs-rich-tpl",
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "template",
+    "scaffolding",
+    "cli"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "child_process": "^1.0.2",
+    "cli-progress": "^3.12.0",
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.0.0",
+    "ora": "^8.1.0",
+    "path": "^0.12.7"
+  }
+}
