@@ -10,8 +10,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    ignore:
-      - dependency-name: "eslint"
     groups:
       angular:
         applies-to: version-updates
@@ -21,7 +19,7 @@ updates:
           - "minor"
           - "patch"
 
-  # CLI の依存関係をチェック
+  # CLI とテンプレートの依存関係を一括チェック
   - package-ecosystem: "npm"
     directory: "/packages/nextjs-rich-tpl"
     schedule:
@@ -35,29 +33,13 @@ updates:
           - "minor"
           - "patch"
 
-  # テンプレート: with-i18n-routing の依存関係をチェック
+  # テンプレートの依存関係を一括でチェック
   - package-ecosystem: "npm"
-    directory: "/examples/app/with-i18n-routing"
+    directories:
+      - "/examples/app/with-i18n-routing"
+      - "/examples/app/without-i18n-routing"
     schedule:
       interval: "daily"
-    ignore:
-      - dependency-name: "eslint"
-    groups:
-      angular:
-        applies-to: version-updates
-        patterns:
-          - "tar"
-        update-types:
-          - "minor"
-          - "patch"
-
-  # テンプレート: without-i18n-routing の依存関係をチェック
-  - package-ecosystem: "npm"
-    directory: "/examples/app/without-i18n-routing"
-    schedule:
-      interval: "daily"
-    ignore:
-      - dependency-name: "eslint"
     groups:
       angular:
         applies-to: version-updates
