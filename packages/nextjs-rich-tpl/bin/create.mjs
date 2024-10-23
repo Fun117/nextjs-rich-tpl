@@ -8,10 +8,22 @@ import cliProgress from "cli-progress";
 import chalk from "chalk";
 import ora from "ora";
 
+const templates = [
+  {
+    name: "app/with-i18n-routing",
+    description: "Next.js app with i18n routing setup",
+    path: "examples/app/with-i18n-routing",
+  },
+  {
+    name: "app/without-i18n-routing",
+    description: "Next.js app without i18n routing setup",
+    path: "examples/app/without-i18n-routing",
+  },
+];
+
 let isCancelled = false;
 
-// SIGINT (Ctrl+C) ハンドラを追加
-process.on('SIGINT', () => {
+process.on("SIGINT", () => {
   console.log(chalk.red("\nProcess interrupted. Cleaning up..."));
   isCancelled = true;
 
@@ -26,29 +38,16 @@ let templateName = null;
 let projectName = null;
 
 if (args.includes("-c") || args.includes("--create")) {
-  const index = args.findIndex(arg => arg === "-c" || arg === "--create");
+  const index = args.findIndex((arg) => arg === "-c" || arg === "--create");
   templateName = args[index + 1];
   projectName = args[index + 2];
 }
-
-const templates = [
-  {
-    name: "app/with-i18n-routing",
-    description: "Next.js app with i18n routing setup",
-    path: "examples/app/with-i18n-routing",
-  },
-  {
-    name: "app/without-i18n-routing",
-    description: "Next.js app without i18n routing setup",
-    path: "examples/app/without-i18n-routing",
-  },
-];
 
 function countFiles(dir) {
   let fileCount = 0;
   const entries = fs.readdirSync(dir);
 
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     const entryPath = path.join(dir, entry);
     if (fs.lstatSync(entryPath).isDirectory()) {
       fileCount += countFiles(entryPath);
@@ -64,7 +63,7 @@ function copyDirectory(src, dest, progressBar) {
   fs.mkdirSync(dest, { recursive: true });
   const entries = fs.readdirSync(src);
 
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     const srcPath = path.join(src, entry);
     const destPath = path.join(dest, entry);
 
@@ -78,12 +77,15 @@ function copyDirectory(src, dest, progressBar) {
 }
 
 function showProgressBar(total, message) {
-  const bar = new cliProgress.SingleBar({
-    format: `${message} |{bar}| {percentage}% || {value}/{total} Chunks || Speed: {speed}`,
-    barCompleteChar: '\u2588',
-    barIncompleteChar: '\u2591',
-    hideCursor: true,
-  }, cliProgress.Presets.shades_classic);
+  const bar = new cliProgress.SingleBar(
+    {
+      format: `${message} |{bar}| {percentage}% || {value}/{total} Chunks || Speed: {speed}`,
+      barCompleteChar: "\u2588",
+      barIncompleteChar: "\u2591",
+      hideCursor: true,
+    },
+    cliProgress.Presets.shades_classic
+  );
 
   bar.start(total, 0, { speed: "N/A" });
   return bar;
@@ -116,7 +118,9 @@ async function installDependencies() {
     const installProcess = spawn("npm", ["install"], { stdio: "pipe" });
 
     installProcess.stdout.on("data", (data) => {
-      spinner.text = chalk.blue(`Installing dependencies...\n${chalk.gray(data.toString())}`);
+      spinner.text = chalk.blue(
+        `Installing dependencies...\n${chalk.gray(data.toString())}`
+      );
     });
 
     installProcess.stderr.on("data", (data) => {
@@ -168,23 +172,38 @@ async function installDependencies() {
     process.exit(1);
   }
 
-  console.log(chalk.blue(`\nCreating a new Next.js Rich Template in ${chalk.green(targetPath)}\n`));
+  console.log(
+    chalk.blue(
+      `\nCreating a new Next.js Rich Template in ${chalk.green(targetPath)}\n`
+    )
+  );
 
   try {
     const repoUrl = "https://github.com/Fun117/nextjs-rich-tpl.git";
     const cloneSpinner = ora("Cloning repository...").start();
 
-    await runCommand(`git clone --depth 1 --filter=blob:none --sparse ${repoUrl} ${projectName}`);
+    await runCommand(
+      `git clone --depth 1 --filter=blob:none --sparse ${repoUrl} ${projectName}`
+    );
     cloneSpinner.succeed("Repository cloned.");
 
-    console.log(`\n${chalk.blue("Initializing project with template:")} ${chalk.green(selectedTemplate.name)}\n`);
+    console.log(
+      `\n${chalk.blue("Initializing project with template:")} ${chalk.green(
+        selectedTemplate.name
+      )}\n`
+    );
     process.chdir(targetPath);
     await runCommand(`git sparse-checkout set ${selectedTemplate.path}`);
 
-    const itemsToRemove = fs.readdirSync(targetPath).filter(item => item !== "examples");
-    const progressBarRemove = showProgressBar(itemsToRemove.length, "Removing files");
+    const itemsToRemove = fs
+      .readdirSync(targetPath)
+      .filter((item) => item !== "examples");
+    const progressBarRemove = showProgressBar(
+      itemsToRemove.length,
+      "Removing files"
+    );
 
-    itemsToRemove.forEach(item => {
+    itemsToRemove.forEach((item) => {
       const itemPath = path.join(targetPath, item);
       fs.rmSync(itemPath, { recursive: true, force: true });
       progressBarRemove.increment();
@@ -196,18 +215,25 @@ async function installDependencies() {
     const templatePath = path.join(targetPath, selectedTemplate.path);
     const totalFilesToCopy = countFiles(templatePath);
     const progressBarCopy = showProgressBar(totalFilesToCopy, "Copying files");
-  
+
     copyDirectory(templatePath, targetPath, progressBarCopy);
     progressBarCopy.stop();
 
-    fs.rmSync(path.join(targetPath, "examples"), { recursive: true, force: true });
+    fs.rmSync(path.join(targetPath, "examples"), {
+      recursive: true,
+      force: true,
+    });
     console.log(chalk.gray("Removed examples directory."));
 
     await installDependencies();
 
-    console.log(chalk.green(`\nSuccess! Created ${projectName} at ${targetPath}\n`));
+    console.log(
+      chalk.green(`\nSuccess! Created ${projectName} at ${targetPath}\n`)
+    );
   } catch (error) {
-    console.error(chalk.red("\nAn error occurred while setting up the project:", error));
+    console.error(
+      chalk.red("\nAn error occurred while setting up the project:", error)
+    );
   }
 })();
 
