@@ -23,11 +23,9 @@ updates:
 
   # CLI の依存関係をチェック
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/packages/nextjs-rich-tpl"
     schedule:
       interval: "daily"
-    ignore:
-      - dependency-name: "eslint"
     groups:
       angular:
         applies-to: version-updates
