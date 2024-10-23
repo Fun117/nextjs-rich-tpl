@@ -1,13 +1,10 @@
 {
   "name": "nextjs-rich-tpl",
-  "version": "0.0.1-pr-1940t-20241023",
+  "version": "0.0.1-beta-2023-20241023",
   "type": "module",
   "description": "A command-line tool to scaffold Next.js projects with rich templates and features.",
   "bin": {
     "nextjs-rich-tpl": "./bin/create.mjs"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "publishConfig": {
     "access": "public"
