@@ -108,7 +108,7 @@ const config: Config = {
       // Navigation items in the header
       items: {
         // Items on the left side of the header
-        left: [
+        nav: [
           {
             label: "Home", // Label for the item
             href: "/", // Internal URL path

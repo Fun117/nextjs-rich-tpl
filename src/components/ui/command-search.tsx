@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/command";
 import config from "../../../richtpl.config";
 import { useTranslations } from "next-intl";
-import { DialogTitle } from "./dialog";
+import { DialogDescription, DialogTitle } from "./dialog";
 import { TLink } from "./Tcomps";
 
 export function SearchCommandDialog({ minWidth, maxWidth }: { minWidth?: number, maxWidth?: number}) {
@@ -74,6 +74,7 @@ export function SearchCommandDialog({ minWidth, maxWidth }: { minWidth?: number,
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <DialogTitle />
+        <DialogDescription/>
         <CommandInput
           placeholder={t("Type a command or search&#46;&#46;&#46;")}
         />

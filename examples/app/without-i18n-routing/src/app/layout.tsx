@@ -114,7 +114,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${inter} relative w-full h-full min-h-dvh overflow-x-clip`}
+        className={`${inter.className} relative w-full h-full min-h-dvh overflow-x-clip`}
         suppressHydrationWarning
       >
         <ThemeProvider
