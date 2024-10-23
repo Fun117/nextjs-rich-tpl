@@ -72,11 +72,35 @@ You can deploy the template on Vercel or preview it with StackBlitz:
 
 ## How to Use
 
-To bootstrap the project, clone the repository:
+To bootstrap a project, use the CLI:
+
+### Installation
+
+You can globally install `nextjs-rich-tpl` using the following command:
+
+```bash
+npm install -g nextjs-rich-tpl
+```
+
+### How to Use the CLI
+
+To create a project, run the following command:
+
+```bash
+npx nextjs-rich-tpl
+```
+
+When you run the command, the following steps will be displayed:
+
+1. Select the Next.js template to use
+2. Enter the project name
+3. Create the project and install dependencies
+
+<!-- To bootstrap the project, clone the repository:
 
 ```bash
 npx create-next-app -e nextjs-rich-tpl
-```
+``` -->
 
 Deploy to the cloud using [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) (see the official [documentation](https://nextjs.org/docs/deployment)).
 
