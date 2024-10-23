@@ -33,7 +33,8 @@ export async function generateMetadata({
   const lang = params.locale;
   const t = await getTranslations({ lang, namespace: "Metadata" });
 
-  const pathname = headers().get("x-pathname");
+  const header = await headers()
+  const pathname = header.get("x-pathname");
   const path = pathname ? pathname : "";
 
   const generateAlternates = () => {
