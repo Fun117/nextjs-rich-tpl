@@ -8,9 +8,11 @@ import config from "../../richtpl.config";
 const COOKIE_NAME = "NEXT_LOCALE";
 
 export async function getUserLocale() {
-  return cookies().get(COOKIE_NAME)?.value || config.i18n.defaultLocale;
+  const cookieStore = await cookies();
+  return cookieStore.get(COOKIE_NAME)?.value || config.i18n.defaultLocale;
 }
 export type Locale = (typeof config.i18n.locales)[number];
 export async function setUserLocale(locale: Locale) {
-  cookies().set(COOKIE_NAME, locale);
+  const cookieStore = await cookies();
+  cookieStore.set(COOKIE_NAME, locale);
 }

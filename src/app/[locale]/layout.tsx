@@ -1,5 +1,6 @@
-import { Suspense } from "react";
+
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -12,23 +13,23 @@ import config from "../../../richtpl.config";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 
+import { NextUIProvider } from "@nextui-org/react";
+
 // next-theme
 import { ThemeProvider } from "@/components/provider/theme";
 
 // ui
-import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/nav/header";
-import LoaderRo13 from "@/components/ui/loaderro13";
 import Footer from "@/components/nav/footer";
-import { headers } from "next/headers";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 export type LayoutProps = {
   params: { locale: string };
 };
 
-export async function generateMetadata(
-  { params }: LayoutProps,
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: LayoutProps): Promise<Metadata> {
   const lang = params.locale;
   const t = await getTranslations({ lang, namespace: "Metadata" });
 
@@ -148,27 +149,27 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${inter} relative w-full h-full min-h-dvh overflow-x-clip`}
+        className={`${inter.className} relative w-full h-full min-h-dvh overflow-x-clip`}
         suppressHydrationWarning
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme={config.themeConfig.colorMode.defaultMode}
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NextIntlClientProvider messages={messages}>
-            <TooltipProvider>
-              <Header />
-              <main className="w-full h-full min-h-[calc(100dvh-64px)]">
-                <Suspense fallback={<LoaderRo13 time={-1} />}>
+        <NextUIProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme={config.themeConfig.colorMode.defaultMode}
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NextIntlClientProvider messages={messages}>
+              <TooltipProvider>
+                <Header />
+                <main className="w-full h-full min-h-[calc(100dvh-64px)]">
                   {children}
-                </Suspense>
-              </main>
-              <Footer />
-            </TooltipProvider>
-          </NextIntlClientProvider>
-        </ThemeProvider>
+                </main>
+                <Footer />
+              </TooltipProvider>
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </NextUIProvider>
       </body>
     </html>
   );

@@ -27,6 +27,7 @@ function LanguageSelest() {
   useEffect(() => {
     const handleLocaleChange = (newLocale: string) => {
       router.push(`/${newLocale}/${pathname}`);
+      router.refresh();
     };
     handleLocaleChange(selectLocale);
   }, [selectLocale, router, pathname]);
