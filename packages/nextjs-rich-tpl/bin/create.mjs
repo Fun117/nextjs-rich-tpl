@@ -183,7 +183,7 @@ async function installDependencies() {
     const cloneSpinner = ora("Cloning repository...").start();
 
     await runCommand(
-      `git clone --depth 1 --filter=blob:none --sparse ${repoUrl} ${projectName}`
+      `git clone ${repoUrl} ${projectName}`
     );
     cloneSpinner.succeed("Repository cloned.");
 
