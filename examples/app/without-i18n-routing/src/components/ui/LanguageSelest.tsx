@@ -5,7 +5,7 @@ import React, { useTransition } from "react";
 import config from "../../../richtpl.config";
 import { useRouter } from "next/navigation";
 import { Globe } from "lucide-react";
-import { Locale, setUserLocale } from "@/services/locale";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { Locale, setUserLocale } from "@/services/locale";
 
 function LanguageSelest() {
   const t = useTranslations("Languages");

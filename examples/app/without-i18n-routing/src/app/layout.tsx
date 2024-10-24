@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -18,11 +17,9 @@ import { ThemeProvider } from "@/components/provider/theme";
 // ui
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/nav/header";
-import LoaderRo13 from "@/components/ui/loaderro13";
 import Footer from "@/components/nav/footer";
 
-export async function generateMetadata(
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const lang = await getLocale();
   const t = await getTranslations({ lang, namespace: "Metadata" });
 
@@ -123,13 +120,11 @@ export default async function LocaleLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NextIntlClientProvider locale={locale} messages={messages}>
+          <NextIntlClientProvider messages={messages}>
             <TooltipProvider>
               <Header />
               <main className="w-full h-full min-h-[calc(100dvh-64px)]">
-                <Suspense fallback={<LoaderRo13 time={-1} />}>
-                  {children}
-                </Suspense>
+                {children}
               </main>
               <Footer />
             </TooltipProvider>
