@@ -27,17 +27,22 @@ npm install -g nextjs-rich-tpl
 
 ## 使い方
 
-プロジェクトを作成するには、以下のコマンドを実行します。
+`nextjs-rich-tpl` を使用して新しいNext.jsアプリを開始することをお勧めします。 プロジェクトを作成するには
 
 ```bash
 npx nextjs-rich-tpl
 ```
 
-コマンドを実行すると、次の手順が表示されます：
+インストールすると、以下のプロンプトが表示されます：
 
-1. 使用する Next.js テンプレートの選択
-2. プロジェクト名の入力
-3. プロジェクトの作成と依存関係のインストール
+```bash
+Select a Next.js template:
+❯ Next.js app with i18n routing setup 
+  Next.js app without i18n routing setup 
+Enter your project name: (my-nextjs-app) 
+```
+
+プロンプトの後、`nextjs-rich-tpl` はプロジェクト名のフォルダを作成し、必要な依存関係をインストールします。
 
 ## 依存関係
 
