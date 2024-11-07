@@ -1,8 +1,6 @@
 import config from "../../richtpl.config";
 import { getRequestConfig } from "next-intl/server";
 
-const locales = config.i18n.locales;
-
 export default getRequestConfig(async ({ requestLocale }) => {
   // This typically corresponds to the `[locale]` segment
   let locale = await requestLocale;
