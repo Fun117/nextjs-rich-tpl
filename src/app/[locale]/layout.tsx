@@ -1,6 +1,5 @@
 
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -13,27 +12,27 @@ import config from "../../../richtpl.config";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 
-import { NextUIProvider } from "@nextui-org/react";
-
 // next-theme
 import { ThemeProvider } from "@/components/provider/theme";
 
 // ui
+import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/nav/header";
 import Footer from "@/components/nav/footer";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { headers } from "next/headers";
+import { notFound } from "next/navigation";
 
 export type LayoutProps = {
-  params: { locale: string };
+  locale: string;
 };
 
-export async function generateMetadata({
-  params,
-}: LayoutProps): Promise<Metadata> {
-  const lang = params.locale;
-  const t = await getTranslations({ lang, namespace: "Metadata" });
+export async function generateMetadata(props: {
+  params: LayoutProps;
+}): Promise<Metadata> {
+  const { locale } = await props.params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
 
-  const header = await headers()
+  const header = await headers();
   const pathname = header.get("x-pathname");
   const path = pathname ? pathname : "";
 
@@ -48,7 +47,7 @@ export async function generateMetadata({
 
     for (const locale of config.i18n.locales) {
       const localeConfig = config.i18n.localeConfigs[locale];
-      const cleanPath = path.replace(`/${params.locale}`, ""); // Remove current locale from path
+      const cleanPath = path.replace(`/${locale}`, ""); // Remove current locale from path
       alternates.languages[
         localeConfig.htmlLang
       ] = `${config.url}/${localeConfig.path}${cleanPath}`;
@@ -105,7 +104,7 @@ export async function generateMetadata({
         config.themeConfig.image,
       locale:
         config.themeConfig?.metadata?.openGraph?.locale ||
-        config.i18n.localeConfigs[lang].htmlLang ||
+        config.i18n.localeConfigs[locale].htmlLang ||
         "ja-JP",
     },
     twitter: {
@@ -138,11 +137,16 @@ export async function generateMetadata({
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: LayoutProps;
 }) {
+  const { locale } = await params;
+  if (!config.i18n.locales.includes(locale as any)) {
+    notFound();
+  }
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
@@ -153,24 +157,22 @@ export default async function LocaleLayout({
         className={`${inter.className} relative w-full h-full min-h-dvh overflow-x-clip`}
         suppressHydrationWarning
       >
-        <NextUIProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme={config.themeConfig.colorMode.defaultMode}
-            enableSystem
-            disableTransitionOnChange
-          >
-            <NextIntlClientProvider messages={messages}>
-              <TooltipProvider>
-                <Header />
-                <main className="w-full h-full min-h-[calc(100dvh-64px)]">
-                  {children}
-                </main>
-                <Footer />
-              </TooltipProvider>
-            </NextIntlClientProvider>
-          </ThemeProvider>
-        </NextUIProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme={config.themeConfig.colorMode.defaultMode}
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NextIntlClientProvider messages={messages}>
+            <TooltipProvider>
+              <Header />
+              <main className="w-full h-full min-h-[calc(100dvh-64px)]">
+                {children}
+              </main>
+              <Footer />
+            </TooltipProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
