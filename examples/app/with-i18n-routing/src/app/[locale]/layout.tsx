@@ -13,7 +13,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 
 // next-theme
-import { ThemeProvider } from "@/components/provider/theme";
+import { ThemeProvider } from 'next-themes'
 
 // ui
 import { TooltipProvider } from "@/components/ui/tooltip";
