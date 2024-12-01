@@ -21,6 +21,7 @@ import Header from "@/components/nav/header";
 import Footer from "@/components/nav/footer";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 export type LayoutProps = {
   locale: string;
@@ -143,7 +144,7 @@ export default async function LocaleLayout({
   params: LayoutProps;
 }) {
   const { locale } = await params;
-  if (!config.i18n.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as any)) {
     notFound();
   }
 

@@ -14,9 +14,9 @@ for dir in examples/*; do
         for tpl_dir in $dir/*; do
             if [ -d "$tpl_dir" ]; then
                 echo "Cleaning $tpl_dir..."
-                rm -rf "$tpl_dir/.next"
-                rm -rf "$tpl_dir/node_modules"
-                rm -f "$tpl_dir/package-lock.json"
+                rm -rf -v "$tpl_dir/.next"
+                rm -rf -v "$tpl_dir/node_modules"
+                rm -f -v "$tpl_dir/package-lock.json"
             else
                 echo "Skipping $tpl_dir (not a template)"
             fi
