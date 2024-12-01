@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -13,7 +12,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 
 // next-theme
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider } from "next-themes";
 
 // ui
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -21,6 +20,7 @@ import Header from "@/components/nav/header";
 import Footer from "@/components/nav/footer";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 export type LayoutProps = {
   locale: string;
@@ -143,7 +143,7 @@ export default async function LocaleLayout({
   params: LayoutProps;
 }) {
   const { locale } = await params;
-  if (!config.i18n.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as any)) {
     notFound();
   }
 
