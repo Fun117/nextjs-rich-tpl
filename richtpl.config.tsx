@@ -19,7 +19,7 @@ const config: Config = {
   baseUrl: "/",
 
   // GitHub deployment configuration
-  organizationName: "fun117", // GitHub organization/user name
+  organizationName: "toakiryu", // GitHub organization/user name
   projectName: "nextjs-rich-tpl", // GitHub repository name
 
   // Internationalization (i18n) configuration
@@ -69,8 +69,8 @@ const config: Config = {
         "next-intl",
         "lucide-icons",
       ],
-      authors: { name: "Fun117", url: "https://fun117.dev" },
-      creator: "Fun117",
+      authors: { name: "toakiryu", url: "https://fun117.dev" },
+      creator: "toakiryu",
       icons: "/favicon.ico",
       generator: "Next.js",
       publisher: "Vercel",
