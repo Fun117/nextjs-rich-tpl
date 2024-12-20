@@ -13,7 +13,7 @@ const config: Config = {
   favicon: "/favicon.ico",
 
   // Production URL of the site
-  url: "https://nextjs-rich-tpl.vercel.app",
+  url: "https://nextjs-rich-tpl.toakiryu.com",
 
   // Base URL pathname (for GitHub Pages deployment)
   baseUrl: "/",
@@ -69,13 +69,13 @@ const config: Config = {
         "next-intl",
         "lucide-icons",
       ],
-      authors: { name: "toakiryu", url: "https://fun117.dev" },
+      authors: { name: "toakiryu", url: "https://toakiryu.com" },
       creator: "toakiryu",
       icons: "/favicon.ico",
       generator: "Next.js",
       publisher: "Vercel",
       robots: "follow, index",
-      metadataBase: new URL("https://nextjs-rich-tpl.vercel.app"),
+      metadataBase: new URL("https://nextjs-rich-tpl.toakiryu.com"),
     },
     SearchCommand: [
       {

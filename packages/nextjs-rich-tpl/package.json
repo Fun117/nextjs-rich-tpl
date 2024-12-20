@@ -9,7 +9,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "toakiryu <toakiryu@gmail.com> (https://fun117.dev)",
+  "author": "toakiryu <toakiryu@gmail.com> (https://toakiryu.com)",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/toakiryu/nextjs-rich-tpl.git",
@@ -19,7 +19,7 @@
     "url": "https://github.com/toakiryu/nextjs-rich-tpl/issues",
     "email": "toakiryu@gmail.com"
   },
-  "homepage": "https://github.com/toakiryu/nextjs-rich-tpl",
+  "homepage": "https://nextjs-rich-tpl.toakiryu.com",
   "license": "MIT",
   "keywords": [
     "nextjs",
